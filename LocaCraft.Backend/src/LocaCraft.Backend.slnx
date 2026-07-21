@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../LocaCraft.API/LocaCraft.API.csproj" Id="806e0708-9315-4167-8a1a-d53fee60e863" />
   <Project Path="LocaCraft.Application.csproj" />
   <Project Path="LocaCraft.Domain/LocaCraft.Domain.csproj" Id="c2ba7fe3-5733-41d3-a318-5939cdbe84d2" />
 </Solution>
