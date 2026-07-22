@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "LocaCraft.Infrastructure": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:43804;http://localhost:43805"
+    }
+  }
+}

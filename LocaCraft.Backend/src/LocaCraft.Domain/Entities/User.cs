@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using LocaCraft.Domain.Bases;
+using System.ComponentModel.DataAnnotations;
 
 namespace LocaCraft.API.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
         [Required, MaxLength(50)]
         public string Username { get; set; } = null!;

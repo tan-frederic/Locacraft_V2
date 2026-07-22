@@ -1,9 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.Contracts;
+﻿using LocaCraft.Domain.Bases;
+using System.ComponentModel.DataAnnotations;
 
 namespace LocaCraft.API.Entities
 {
-    public class RealEstate
+    public class RealEstate : BaseEntity
     {
         [Required]
         public string Name { get; set; } = null!;
