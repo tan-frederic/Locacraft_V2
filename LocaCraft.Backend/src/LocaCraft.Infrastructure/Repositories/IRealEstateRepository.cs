@@ -6,5 +6,6 @@ namespace LocaCraft.Infrastructure.Repositories
 {
     public interface IRealEstateRepository : IBaseRepository<RealEstate>
     {
+        public Task CreateRealEstate(RealEstate realEstate);
     }
 }
