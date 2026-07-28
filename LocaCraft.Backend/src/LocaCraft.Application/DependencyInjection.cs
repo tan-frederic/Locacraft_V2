@@ -1,8 +1,5 @@
 ﻿using LocaCraft.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LocaCraft.Application
 {
