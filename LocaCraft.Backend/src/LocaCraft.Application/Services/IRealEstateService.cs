@@ -1,12 +1,11 @@
 ﻿using LocaCraft.API.Entities;
 using LocaCraft.Application.Bases;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using LocaCraft.Application.Dtos.RealEstates;
 
 namespace LocaCraft.Application.Services
 {
     public interface IRealEstateService : IBaseService<RealEstate>
     {
+        Task<RealEstateResponseDto> CreateRealEstate(RealEstate realEstate);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using LocaCraft.API.Entities;
+using LocaCraft.Application.Dtos.RealEstates;
 using LocaCraft.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq.Expressions;
@@ -40,6 +41,15 @@ namespace LocaCraft.API.Controllers
                 return NotFound();
             }
             return Ok(realEstate);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<RealEstateResponseDto>> CreateRealEstate(CreateRealEstateDto dto)
+        {
+            var realEstate = RealEstateDtoMapper.ToEntity(dto);
+            await _realEstateService.CreateRealEstate(realEstate);
+            var response = RealEstateDtoMapper.ToResponseDto(realEstate);
+            return Ok(response);
         }
     }
 }

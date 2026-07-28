@@ -8,7 +8,7 @@ namespace LocaCraft.Application.Bases
         where TRepository : IBaseRepository<TEntity>
         where TEntity : BaseEntity
     {
-        private readonly TRepository _repository;
+        protected readonly TRepository _repository;
 
         public BaseService(TRepository repository)
         {

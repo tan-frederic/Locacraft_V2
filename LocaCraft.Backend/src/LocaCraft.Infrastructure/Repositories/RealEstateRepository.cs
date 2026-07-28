@@ -10,7 +10,7 @@ namespace LocaCraft.Infrastructure.Repositories
         {
         }
 
-        public async Task CreateRealEstate(RealEstate realEstate)
+        public async Task CreateRealEstateAsync(RealEstate realEstate)
         {
             await _context.AddAsync(realEstate);
         }
