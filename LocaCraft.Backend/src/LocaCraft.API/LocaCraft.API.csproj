@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LocaCraft.Application\LocaCraft.Application.csproj" />
+  </ItemGroup>
+
 </Project>

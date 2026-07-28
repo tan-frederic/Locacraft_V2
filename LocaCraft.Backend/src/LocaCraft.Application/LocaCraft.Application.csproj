@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\LocaCraft.Domain\LocaCraft.Domain.csproj" />
     <ProjectReference Include="..\LocaCraft.Infrastructure\LocaCraft.Infrastructure.csproj" />
   </ItemGroup>

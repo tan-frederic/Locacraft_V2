@@ -1,5 +1,6 @@
 ﻿using LocaCraft.API.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace LocaCraft.Infrastructure.Database
 {
@@ -14,13 +15,7 @@ namespace LocaCraft.Infrastructure.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<RealEstate>(entity =>
-            {
-                entity.HasKey(e => e.Id);
-                entity.Property(e => e.Name).IsRequired();
-                entity.Property(e => e.Address).IsRequired();
-                entity.Property(e => e.PostalCode).IsRequired();
-            });
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }
