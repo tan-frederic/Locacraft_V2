@@ -9,5 +9,10 @@ namespace LocaCraft.Infrastructure.Repositories
         public RealEstateRepository(AppDbContext context) : base(context)
         {
         }
+
+        public async Task CreateRealEstate(RealEstate realEstate)
+        {
+            await _context.AddAsync(realEstate);
+        }
     }
 }

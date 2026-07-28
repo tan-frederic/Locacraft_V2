@@ -10,7 +10,7 @@ namespace LocaCraft.Infrastructure.Bases
         where TContext : AppDbContext
     {
         #region ATTRIBUTES
-        private readonly TContext _context;
+        protected readonly TContext _context;
         #endregion
 
         #region CONSTRUCTOR
@@ -36,6 +36,11 @@ namespace LocaCraft.Infrastructure.Bases
         public async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> where)
         {
             return await _context.Set<TEntity>().Where(where).AsNoTracking().ToListAsync();
+        }
+
+        public async Task SaveAsync()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }
