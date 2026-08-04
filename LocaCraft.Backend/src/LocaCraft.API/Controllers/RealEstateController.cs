@@ -27,7 +27,9 @@ namespace LocaCraft.API.Controllers
         [HttpGet("search")]
         public async Task<IActionResult> Search([FromQuery] string query)
         {
-            var whereExpression = string.IsNullOrEmpty(query) ? null : (Expression<Func<RealEstate, bool>>)(re => re.Name.Contains(query) || re.Address.Contains(query));
+            if (string.IsNullOrEmpty(query))
+                return await GetAll();
+            var whereExpression = (Expression<Func<RealEstate, bool>>)(re => re.Name.Contains(query) || re.Address.Contains(query));
             var realEstates = await _realEstateService.GetAllAsync(whereExpression);
             return Ok(realEstates);
         }
