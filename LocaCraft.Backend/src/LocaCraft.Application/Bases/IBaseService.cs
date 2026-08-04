@@ -8,5 +8,7 @@ namespace LocaCraft.Application.Bases
         Task<T> GetById(int id);
         Task<IEnumerable<T>> GetAllAsync();
         Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> where);
+
+        Task SaveAsync();
     }
 }

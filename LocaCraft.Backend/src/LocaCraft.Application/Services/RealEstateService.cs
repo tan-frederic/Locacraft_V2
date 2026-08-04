@@ -13,8 +13,7 @@ namespace LocaCraft.Application.Services
 
         public async Task<RealEstateResponseDto> CreateRealEstate(RealEstate realEstate)
         {
-            await _repository.CreateRealEstateAsync(realEstate);
-            await _repository.SaveAsync();
+            await _repository.CreateRealEstateAsync(realEstate);            
             return RealEstateDtoMapper.ToResponseDto(realEstate);
         }
     }

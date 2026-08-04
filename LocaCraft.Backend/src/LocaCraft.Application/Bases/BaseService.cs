@@ -29,5 +29,10 @@ namespace LocaCraft.Application.Bases
         {
             return await _repository.GetByIdAsync(id);
         }
+
+        public async Task SaveAsync()
+        {
+            await _repository.SaveAsync();
+        }
     }
 }

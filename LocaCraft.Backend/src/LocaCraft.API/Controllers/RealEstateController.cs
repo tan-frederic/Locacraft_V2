@@ -48,8 +48,20 @@ namespace LocaCraft.API.Controllers
         {
             var realEstate = RealEstateDtoMapper.ToEntity(dto);
             await _realEstateService.CreateRealEstate(realEstate);
+            await _realEstateService.SaveAsync();
             var response = RealEstateDtoMapper.ToResponseDto(realEstate);
             return Ok(response);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<RealEstateResponseDto>> UpdateRealEstate(int id, UpdateRealEstateDto dto)
+        {
+            var realEstate = await _realEstateService.GetById(id);
+            if (realEstate == null)
+                return NotFound();
+            RealEstateDtoMapper.ApplyUpdate(dto, realEstate);
+            await _realEstateService.SaveAsync();
+            return Ok(RealEstateDtoMapper.ToResponseDto(realEstate));
         }
     }
 }
