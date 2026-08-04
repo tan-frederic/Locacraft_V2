@@ -39,9 +39,7 @@ namespace LocaCraft.API.Controllers
         {
             var realEstate = await _realEstateService.GetById(id);
             if (realEstate == null)
-            {
                 return NotFound();
-            }
             return Ok(realEstate);
         }
 

@@ -1,4 +1,5 @@
 ﻿using LocaCraft.Domain.Bases;
+using LocaCraft.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace LocaCraft.API.Entities
@@ -13,5 +14,7 @@ namespace LocaCraft.API.Entities
 
         [Required]
         public int PostalCode { get; set; }
+
+        public ICollection<Lease> Leases { get; set; } = new List<Lease>();
     }
 }

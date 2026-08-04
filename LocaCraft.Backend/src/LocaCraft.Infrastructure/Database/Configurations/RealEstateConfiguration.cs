@@ -13,6 +13,11 @@ namespace LocaCraft.Infrastructure.Database.Configurations
             builder.Property(e => e.Name).IsRequired();
             builder.Property(e => e.Address).IsRequired();
             builder.Property(e => e.PostalCode).IsRequired();
+
+            builder.HasMany(e => e.Leases)
+                   .WithOne(l => l.RealEstate)
+                   .HasForeignKey(l => l.RealEstateId)
+                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
